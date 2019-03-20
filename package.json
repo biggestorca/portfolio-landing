@@ -1,7 +1,7 @@
 {
-  "name": "Webpack-starter",
+  "name": "Portfolio_landing",
   "version": "0.0.1",
-  "description": "Webpack starter",
+  "description": "Portfolio landing",
   "license": "MIT",
   "author": "Big Orca <imma.big.orca@gmail.com>",
   "scripts": {
