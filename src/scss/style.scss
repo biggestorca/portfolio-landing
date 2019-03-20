@@ -48,9 +48,11 @@ body {
 
   @media (--xs-only) {
     max-width: calc(100% - 5px);
+    margin: 0 30px;
   }
 
   @media (--mobile-only) {
     max-width: 315px;
+    margin: 0 auto;
   }
 }
