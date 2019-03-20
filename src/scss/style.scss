@@ -6,14 +6,15 @@
 /* custom */
 @import 'variables.scss';
 @import 'media.scss';
-@import 'fonts.scss';
 
 /* components */
 @import 'header.scss';
 @import 'footer.scss';
 
 html {
-  font-family: 'MuseoSans', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
 }
 
 body {
@@ -23,8 +24,4 @@ body {
   main {
     flex: 1 0 auto;
   }
-}
-
-.main-info {
-  margin-top: 40px;
 }
