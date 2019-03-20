@@ -1,6 +1,5 @@
 @import '_custom.scss';
 /* from node_modules */
-@import '~bootstrap/scss/bootstrap';
 @import 'normalize.css';
 
 /* custom */
@@ -23,5 +22,25 @@ body {
   height: 100vh;
   main {
     flex: 1 0 auto;
+  }
+}
+
+.container {
+  max-width: 1100px;
+  min-width: 315px;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  @media (--xs-only) {
+    max-width: calc(100% - 5px);
+  }
+  @media (--sm-only) {
+    max-width: calc(100% - 20px);
+  }
+  @media (--md-only) {
+    max-width: calc(100% - 30px);
+  }
+  @media (--lg-only) {
+    max-width: 1100px;
   }
 }
