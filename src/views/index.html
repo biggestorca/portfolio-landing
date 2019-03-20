@@ -2,21 +2,20 @@
 <%= _.template(require('../components/head.html'))(tempParameters.index) %> 
 <%= _.template(require('../components/header.html'))(tempParameters) %>
 <main>
-  <div class="container-fluid">
-    <h1>
-      Webpack starter
-    </h1>
-    <small class="text-muted">
-      Простой способ начать разрабатывать сайты
-    </small>
-    <p class="text-left main-info">
-      Заготовка создана для легкого старта и разработки маленьких и сердних веб
-      сайтов.
-      <br />
-      По умолчанию используется bootstrap v4, SCSS.
-      <br />
-      Сборка с помощью webpack v4.
-    </p>
+  <div class="container h1" id="h1" style="height: 450px;background: cyan;">
+    h1
+  </div>
+  <div class="container works" id="works" style="height: 1230px; background:red;">
+    works
+  </div>
+  <div class="container about" id="about" style="height: 600px;background: yellow;">
+    about
+  </div>
+  <div class="container links" id="links" style="height: 300px; background: peru;">
+    links
+  </div>
+  <div class="container contacts" id="contacts" style="height: 700px; background:seagreen;">
+    contacts
   </div>
 </main>
 <%= _.template(require('../components/footer.html'))(tempParameters) %>

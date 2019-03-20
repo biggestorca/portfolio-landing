@@ -1,4 +1,5 @@
 @import '_custom.scss';
+
 /* from node_modules */
 @import 'normalize.css';
 
@@ -12,35 +13,44 @@
 
 html {
   font-family: 'Nunito', sans-serif;
-  font-weight: 800;
   font-size: 16px;
+  font-weight: 800;
 }
 
 body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+
   main {
     flex: 1 0 auto;
   }
 }
 
 .container {
-  max-width: 1100px;
-  min-width: 315px;
   display: flex;
-  margin: 0 auto;
+  min-width: 315px;
+  max-width: 1100px;
   padding: 0;
-  @media (--xs-only) {
-    max-width: calc(100% - 5px);
+  margin: 0 auto;
+
+  @media (--lg-only) {
+    max-width: 1100px;
   }
-  @media (--sm-only) {
-    max-width: calc(100% - 20px);
-  }
+
   @media (--md-only) {
     max-width: calc(100% - 30px);
   }
-  @media (--lg-only) {
-    max-width: 1100px;
+
+  @media (--sm-only) {
+    max-width: calc(100% - 20px);
+  }
+
+  @media (--xs-only) {
+    max-width: calc(100% - 5px);
+  }
+
+  @media (--mobile-only) {
+    max-width: 315px;
   }
 }
