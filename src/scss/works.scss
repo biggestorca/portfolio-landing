@@ -96,6 +96,13 @@
     justify-content: flex-end;
     padding: 0 0 60px 60px;
     background-size: cover;
+    transition: all 0.35s ease-in;
+
+    @media (--md-and-more) {
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
 
     @media (--md-and-less) {
       padding: 0 0 30px 30px;
