@@ -1,0 +1,10 @@
+.social-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 114px;
+
+  &__item {
+    fill: $secondary;
+  }
+}
