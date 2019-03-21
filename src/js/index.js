@@ -3,9 +3,12 @@ import navigatorStyling from './nav';
 import burgerMenu from './burgerMenu';
 import smoothScrollToAnchor from './smoothScrollToAnchor';
 
-console.log('ENV', process.env.NODE_ENV);
+const env = process.env.NODE_ENV;
 
-registerServiceWorker();
+if (env === 'production') {
+  registerServiceWorker();
+}
+
 burgerMenu();
 smoothScrollToAnchor();
 navigatorStyling();

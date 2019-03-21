@@ -9,9 +9,13 @@
 
 /* components */
 @import 'header.scss';
-@import 'h1.scss';
+@import 'section.scss';
 @import 'social-group.scss';
 @import 'footer.scss';
+
+/* blocks */
+@import 'h1.scss';
+@import 'works.scss';
 
 html {
   font-family: 'Nunito', sans-serif;
