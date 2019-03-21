@@ -16,6 +16,7 @@
 /* blocks */
 @import 'h1.scss';
 @import 'works.scss';
+@import 'about.scss';
 
 html {
   font-family: 'Nunito', sans-serif;
@@ -64,4 +65,8 @@ body {
     margin-right: auto;
     margin-left: auto;
   }
+}
+
+.short-mobile-text__see-more {
+  cursor: pointer;
 }

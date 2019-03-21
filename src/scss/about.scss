@@ -1,0 +1,106 @@
+.about {
+  margin-top: 120px;
+
+  @media (--xs-only) {
+    margin-top: 60px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: calc(50% - 30px);
+    margin-bottom: 60px;
+
+    @media (--xs-only) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 30px;
+
+    @media (--xs-only) {
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  &__body {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0;
+
+    .secondary {
+      color: $secondary;
+    }
+  }
+
+  &__friends {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media (--xs-only) {
+      justify-content: space-between;
+    }
+
+    > div {
+      height: 43px;
+
+      @media (--xs-only) {
+        height: 26px;
+      }
+
+      &:nth-child(1) {
+        width: 129px;
+        margin-right: 146px;
+        background: transparent url('/img/friends/Google.svg') 0 0 no-repeat;
+
+        @media (--xs-only) {
+          width: 77px;
+          margin-right: 0;
+          background:
+            transparent url('/img/friends/Google-mob.svg') 0 0
+            no-repeat;
+        }
+      }
+
+      &:nth-child(2) {
+        width: 138px;
+        margin-right: 137px;
+        background: transparent url('/img/friends/Airbnb.svg') 0 0 no-repeat;
+
+        @media (--xs-only) {
+          width: 83px;
+          margin-right: 0;
+          background:
+            transparent url('/img/friends/Airbnb-mob.svg') 0 0
+            no-repeat;
+        }
+      }
+
+      &:nth-child(3) {
+        width: 44px;
+        background: transparent url('/img/friends/Dropbox.svg') 0 0 no-repeat;
+
+        @media (--xs-only) {
+          width: 26px;
+          background:
+            transparent url('/img/friends/Dropbox-mob.svg') 0 0
+            no-repeat;
+        }
+      }
+    }
+  }
+}
