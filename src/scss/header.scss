@@ -54,7 +54,7 @@ header {
         display: flex;
         width: 100%;
         background: #fff;
-        animation: 1s ease-out 0s forwards navOpen;
+        animation: 0.5s ease-out 0s forwards navOpen;
 
         > .nav__links-wrapper {
           width: 100%;
@@ -66,7 +66,7 @@ header {
               }
 
               &:nth-child(2) {
-                animation: 0.5s ease-out 0.25s forwards linkAppear;
+                animation: 0.5s ease-out 0.12s forwards linkAppear;
               }
             }
           }
@@ -74,11 +74,11 @@ header {
           &:nth-child(2) {
             a {
               &:nth-child(1) {
-                animation: 0.5s ease-out 0.5s forwards linkAppear;
+                animation: 0.5s ease-out 0.25s forwards linkAppear;
               }
 
               &:nth-child(2) {
-                animation: 0.5s ease-out 0.75s forwards linkAppear;
+                animation: 0.5s ease-out 0.37s forwards linkAppear;
               }
             }
           }

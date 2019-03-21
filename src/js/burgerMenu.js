@@ -13,10 +13,7 @@ const burgerMenu = () => {
           // Get the target from the "data-target" attribute
           const { target } = el.dataset;
           const $target = document.getElementById(target);
-          const $links = Array.prototype.slice.call(
-            $target.getElementsByTagName('a'),
-            0,
-          );
+          const $links = Array.prototype.slice.call($target.getElementsByTagName('a'), 0);
 
           // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
           el.classList.toggle('is-active');
@@ -28,6 +25,16 @@ const burgerMenu = () => {
               $target.classList.remove('is-active');
             });
           });
+
+          // Hide menu when click on any other place of site, not menu
+          // document.addEventListener('mouseup', (e) => {
+          //   const $container = document.getElementById('nav__inner');
+
+          //   if (!$container.contains(e.target).length || $navbarBurgers.contains(e.target)) {
+          //     el.classList.remove('is-active');
+          //     $target.classList.remove('is-active');
+          //   }
+          // });
         });
       });
     }
