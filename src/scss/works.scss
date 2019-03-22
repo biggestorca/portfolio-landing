@@ -29,7 +29,7 @@
           margin-bottom: 30px;
         }
 
-        > div {
+        > .works__item {
           &:nth-child(1) {
             height: 505px;
             background-color: transparent;
@@ -58,7 +58,7 @@
       }
 
       &:nth-child(2) {
-        > div {
+        > .works__item {
           &:nth-child(1) {
             height: 737px;
             background-color: transparent;
@@ -134,6 +134,7 @@
     }
 
     &-title {
+      margin: 0;
       font-size: 28px;
       font-weight: 700;
       line-height: 36px;
