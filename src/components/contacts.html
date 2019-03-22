@@ -1,0 +1,60 @@
+<div class="contacts" id="contacts">
+  <section class="container">
+    <div class="contacts__outer">
+      <h2>Contacts</h2>
+      <div class="contacts__wrapper">
+        <div class="contacts__info">
+          <div class="contacts__text">
+            Positive pleasure-oriented goals are much more powerful motivators
+            than negative fear-based ones.
+          </div>
+          <%= social %>
+        </div>
+        <div class="contacts__form">
+          <form class="form">
+            <div class="form__inner-wrapper">
+              <div class="contacts__form-inner">
+                <div class="form__group">
+                  <label for="name" class="form__label">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Incognito"
+                    class="form__input"
+                    required
+                  />
+                </div>
+                <div class="form__group">
+                  <label for="email" class="form__label">E-mail</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="incognito@gmail.com"
+                    required
+                    class="form__input"
+                  />
+                </div>
+                <div class="form__group">
+                  <label for="message" class="form__label">Message</label>
+                  <textarea
+                    type="email"
+                    name="message"
+                    id="message"
+                    placeholder="Your question or suggestion"
+                    required
+                    class="form__input"
+                  ></textarea>
+                </div>
+              </div>
+              <div>
+                <button type="submit" class="form__submit"></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
