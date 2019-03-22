@@ -24,11 +24,11 @@ const emailListen = () =>
             form.classList.add('is-sended');
             message.classList.add('is-active');
 
-            // setTimeout(() => {
-            //   form.reset();
-            //   form.classList.remove('is-sended');
-            //   form.removeChild(message);
-            // }, 4000);
+            setTimeout(() => {
+              form.reset();
+              form.classList.remove('is-sended');
+              form.removeChild(message);
+            }, 4000);
           },
           () => {
             message.innerText = 'Failed send message!';
