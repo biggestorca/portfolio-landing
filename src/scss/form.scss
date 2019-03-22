@@ -81,6 +81,8 @@
   &__submit {
     width: 52px;
     height: 52px;
+    font-size: 0;
+    color: transparent;
     cursor: pointer;
     background: transparent url('/img/icons/Button.svg') 0 0 no-repeat;
     border: 0;

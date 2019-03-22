@@ -5,6 +5,8 @@
   width: 114px;
 
   &__item {
+    font-size: 0;
+    color: transparent;
     fill: $secondary;
   }
 }
