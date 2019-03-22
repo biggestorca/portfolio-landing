@@ -4,6 +4,7 @@ import burgerMenu from './burgerMenu';
 import smoothScrollToAnchor from './smoothScrollToAnchor';
 import worksChanger from './worksChanger';
 import shortMobileText from './shortMobileText';
+import emailListen from './form';
 
 const env = process.env.NODE_ENV;
 
@@ -16,3 +17,4 @@ worksChanger();
 shortMobileText();
 smoothScrollToAnchor();
 navigatorStyling();
+emailListen();

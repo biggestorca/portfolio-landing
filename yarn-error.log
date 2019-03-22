@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add smoothscroll-polyfill
+  /usr/local/bin/node /usr/local/bin/yarn add
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -32,7 +32,9 @@ npm manifest:
       "deploy": "webpack --config webpack.prod.js && firebase deploy"
     },
     "dependencies": {
-      "normalize.css": "^8.0.0"
+      "emailjs-com": "^2.3.2",
+      "normalize.css": "^8.0.0",
+      "smoothscroll-polyfill": "^0.4.3"
     },
     "devDependencies": {
       "@babel/core": "^7.0.0-rc.4",
@@ -3274,6 +3276,11 @@ Lockfile:
       inherits "^2.0.1"
       minimalistic-assert "^1.0.0"
       minimalistic-crypto-utils "^1.0.0"
+  
+  emailjs-com@^2.3.2:
+    version "2.3.2"
+    resolved "https://registry.yarnpkg.com/emailjs-com/-/emailjs-com-2.3.2.tgz#5da57ff3c6a99b47193f5a1aeaebcb04d0188011"
+    integrity sha512-dI6vjLGHDNTOOY0vNx6HZm95ey1aKCtkdOPLC2UYkCgV8QSJCuMY/JlxjXD3BXOvu4X4qn+XCN3DTUz1OiewAg==
   
   emoji-regex@^7.0.1, emoji-regex@^7.0.2:
     version "7.0.3"
@@ -8694,6 +8701,11 @@ Lockfile:
       ansi-styles "^3.2.0"
       astral-regex "^1.0.0"
       is-fullwidth-code-point "^2.0.0"
+  
+  smoothscroll-polyfill@^0.4.3:
+    version "0.4.3"
+    resolved "https://registry.yarnpkg.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.3.tgz#94e5f2d604efcceb53f23ff0380d7ea7280d4bff"
+    integrity sha512-aUg0sY8XlWw9reC3VGlVdmC9W4K565alN4t8Cm50kULz53NB4GvsZbrinWPLqYqLolY60NBdqHDyh89MqDUc/Q==
   
   snapdragon-node@^2.0.1:
     version "2.1.1"
