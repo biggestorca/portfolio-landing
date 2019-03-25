@@ -10,41 +10,47 @@ const burgerMenu = () => {
       // Add a click event on each of them
       $navbarBurgers.forEach((el) => {
         el.addEventListener('click', () => {
+          const $substrate = document.createElement('div');
+          $substrate.classList.add('substrate');
+
           // Get the target from the "data-target" attribute
           const { target } = el.dataset;
           const $target = document.getElementById(target);
           const $links = Array.prototype.slice.call($target.getElementsByTagName('a'), 0);
 
-          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-          if (el.classList.contains('is-active')) {
+          function closeNav() {
             el.classList.remove('is-active');
             $target.classList.add('is-closed');
             $target.classList.remove('is-active');
             setTimeout(() => $target.classList.remove('is-closed'), 350);
+            document.body.removeChild($substrate);
+            document.body.classList.remove('nav-open');
+          }
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          if (el.classList.contains('is-active')) {
+            closeNav();
           } else {
             el.classList.add('is-active');
             $target.classList.remove('is-closed');
             $target.classList.add('is-active');
+            document.body.appendChild($substrate);
+            document.body.classList.add('nav-open');
           }
 
-          // toggle($target);
-
           $links.forEach((link) => {
-            link.addEventListener('click', () => {
-              el.classList.remove('is-active');
-              setTimeout(() => $target.classList.remove('is-active'), 350);
-            });
+            link.addEventListener(
+              'click',
+              () => {
+                closeNav();
+              },
+              false,
+            );
           });
 
-          // Hide menu when click on any other place of site, not menu
-          // document.addEventListener('mouseup', (e) => {
-          //   const $container = document.getElementById('nav__inner');
-
-          //   if (!$container.contains(e.target).length || $navbarBurgers.contains(e.target)) {
-          //     el.classList.remove('is-active');
-          //     $target.classList.remove('is-active');
-          //   }
-          // });
+          $substrate.addEventListener('click', () => {
+            closeNav();
+          });
         });
       });
     }

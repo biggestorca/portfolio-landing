@@ -33,6 +33,11 @@ body {
   flex-direction: column;
   height: 100vh;
 
+  &.nav-open{
+    position: relative;
+    overflow: hidden;
+  }
+
   main {
     flex: 1 0 auto;
   }
@@ -73,4 +78,14 @@ body {
 
 .short-mobile-text__see-more {
   cursor: pointer;
+}
+
+.substrate {
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  width: 100vw;
+  width: 100%;
+  height: 100vh;
+  height: 100%;
 }
