@@ -17,15 +17,41 @@ header {
   }
 }
 
+@keyframes navClose {
+  from {
+    height: 160px;
+  }
+
+  to {
+    height: 0;
+  }
+}
+
 @keyframes linkAppear {
   from {
+    left: 10px;
     width: 0;
     opacity: 0;
   }
 
   to {
+    left: 0;
     width: 100%;
     opacity: 1;
+  }
+}
+
+@keyframes linkDisappear {
+  from {
+    left: 0;
+    width: 100%;
+    opacity: 1;
+  }
+
+  to {
+    left: 10px;
+    width: 0;
+    opacity: 0;
   }
 }
 
@@ -41,24 +67,70 @@ header {
     height: inherit;
 
     @media (--xs-only) {
+      position: absolute;
+      top: 52px;
+      z-index: 10;
       display: none;
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
+      width: 100%;
       height: 0;
+      background: #fff;
 
-      &.is-active {
-        position: absolute;
-        top: 50px;
-        z-index: 10;
-        display: flex;
+      > .nav__links-wrapper {
         width: 100%;
-        background: #fff;
-        animation: 0.5s ease-out 0s forwards navOpen;
+
+        a {
+          position: relative;
+          left: 10px;
+          width: 0;
+          opacity: 0;
+        }
+      }
+
+      &.is-closed {
+        display: flex;
+        animation: 1s ease-out 0s forwards navClose;
 
         > .nav__links-wrapper {
-          width: 100%;
+          a {
+            left: 0;
+            width: 100%;
+            opacity: 1;
+          }
 
+          &:nth-child(1) {
+            a {
+              &:nth-child(1) {
+                animation: 0.12s ease-out 0.37s forwards linkDisappear;
+              }
+
+              &:nth-child(2) {
+                animation: 0.12s ease-out 0.25s forwards linkDisappear;
+              }
+            }
+          }
+
+          &:nth-child(2) {
+            a {
+              &:nth-child(1) {
+                animation: 0.12s ease-out 0.12s forwards linkDisappear;
+              }
+
+              &:nth-child(2) {
+                animation: 0.12s ease-out 0s forwards linkDisappear;
+              }
+            }
+          }
+        }
+      }
+
+      &.is-active {
+        display: flex;
+        animation: 0.35s ease-out 0s forwards navOpen;
+
+        > .nav__links-wrapper {
           &:nth-child(1) {
             a {
               &:nth-child(1) {
