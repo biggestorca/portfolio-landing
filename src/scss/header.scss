@@ -91,7 +91,7 @@ header {
 
       &.is-closed {
         display: flex;
-        animation: 1s ease-out 0s forwards navClose;
+        animation: 1s linear 0s forwards navClose;
 
         > .nav__links-wrapper {
           a {
@@ -128,7 +128,7 @@ header {
 
       &.is-active {
         display: flex;
-        animation: 0.35s ease-out 0s forwards navOpen;
+        animation: 0.35s linear 0s forwards navOpen;
 
         > .nav__links-wrapper {
           &:nth-child(1) {
