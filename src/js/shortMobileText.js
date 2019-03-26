@@ -5,6 +5,7 @@ const shortMobileText = () => {
       0,
     );
     const oldWindowWidth = document.documentElement.clientWidth;
+    const SEEN_BY_DEFAULT = 140;
     let isMobile = oldWindowWidth <= 767;
 
     const toggleText = (isMobileStatus) => {
@@ -17,30 +18,68 @@ const shortMobileText = () => {
           if (text.length > 200) {
             const trigger =
               '<span class="short-mobile-text__see-more secondary">See more...</span>';
+
             // eslint-disable-next-line no-param-reassign
             el.innerHTML = `<span class="text" data-show="short">${text.slice(
               0,
-              130,
+              SEEN_BY_DEFAULT,
             )}</span> ${trigger}`;
+
+            const textWrapper = el.querySelector('.text');
+            const lastTextPart = Array.prototype.slice.call(
+              text.split('').slice(SEEN_BY_DEFAULT),
+              0,
+            );
+
+            lastTextPart.forEach((letter) => {
+              const sp = document.createElement('span');
+              sp.classList.add('letter');
+              sp.classList.add('letter-none');
+              sp.innerText = letter;
+              textWrapper.appendChild(sp);
+            });
+
+            const $hiddenLetters = Array.prototype.slice.call(
+              textWrapper.querySelectorAll('.letter-none'),
+              0,
+            );
+
             el.querySelector('.short-mobile-text__see-more').addEventListener('click', () => {
-              const textWrapper = el.querySelector('.text');
               const { show } = textWrapper.dataset;
+
+              //   show all text with anim
               if (show === 'short') {
                 textWrapper.dataset.show = 'long';
-                textWrapper.innerHTML = text;
+                $hiddenLetters.forEach((hiddenLetter, index) => {
+                  setTimeout(
+                    () => {
+                      hiddenLetter.classList.remove('letter-none');
+                      hiddenLetter.classList.add('appear');
+                    },
+                    index === 0 ? 1 * 3 : index * 3,
+                  );
+                });
+
                 // eslint-disable-next-line no-param-reassign
                 el.querySelector('.short-mobile-text__see-more').innerText = 'See less';
               } else {
+                //   hide part of text with anim
                 textWrapper.dataset.show = 'short';
-                textWrapper.innerHTML = text.slice(0, 130);
+                $hiddenLetters.forEach((hiddenLetter, index) => {
+                  setTimeout(
+                    () => {
+                      hiddenLetter.classList.remove('appear');
+                      hiddenLetter.classList.add('letter-none');
+                    },
+                    index === 0 ? 1 * 3 : index * 3,
+                  );
+                });
                 // eslint-disable-next-line no-param-reassign
                 el.querySelector('.short-mobile-text__see-more').innerText = 'See more...';
               }
             });
           }
         } else {
-          // eslint-disable-next-line no-param-reassign
-          delete el.dataset.all;
           // eslint-disable-next-line no-param-reassign
           el.innerHTML = text;
         }

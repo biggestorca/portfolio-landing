@@ -105,3 +105,30 @@
     }
   }
 }
+
+@keyframes letterAppear {
+  from {
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: auto;
+    opacity: 1;
+  }
+}
+
+.letter {
+  transition: all ease-out 0.25s;
+}
+
+.letter-none {
+  display: none;
+  width: 0;
+  opacity: 0;
+}
+
+.appear {
+  animation: 0.25s ease-out 0 letterAppear;
+}
