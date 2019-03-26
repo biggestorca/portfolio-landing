@@ -14,30 +14,40 @@ const emailListen = () =>
     $forms.forEach((form) => {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
+        const submitBtn = form.querySelector('.form__submit');
+        submitBtn.setAttribute('diasbled', 'diasbled');
+        const loader = document.createElement('div');
+        const loaderInner = document.createElement('div');
+        loader.appendChild(loaderInner);
+        loader.classList.add('form__loader');
+
+        form.appendChild(loader);
+        form.classList.add('status');
+
         const message = document.createElement('div');
         message.classList.add('form__message');
 
         emailjs.sendForm('contact_service', 'contact_form', form).then(
           () => {
             message.innerText = 'Your message send success!';
+            form.removeChild(loader);
             form.appendChild(message);
-            form.classList.add('is-sended');
             message.classList.add('is-active');
-
+            submitBtn.removeAttribute('diasbled');
             setTimeout(() => {
               form.reset();
-              form.classList.remove('is-sended');
+              form.classList.remove('status');
               form.removeChild(message);
             }, 4000);
           },
           () => {
             message.innerText = 'Failed send message!';
+            form.removeChild(loader);
             form.appendChild(message);
-            form.classList.add('is-sended');
             message.classList.add('is-active');
-
+            submitBtn.removeAttribute('diasbled');
             setTimeout(() => {
-              form.classList.remove('is-sended');
+              form.classList.remove('status');
               form.removeChild(message);
             }, 4000);
           },

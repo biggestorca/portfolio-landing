@@ -23,6 +23,7 @@
                     placeholder="Incognito"
                     class="form__input"
                     required
+                    tabindex="1"
                   />
                 </div>
                 <div class="form__group">
@@ -34,6 +35,7 @@
                     placeholder="incognito@gmail.com"
                     required
                     class="form__input"
+                    tabindex="2"
                   />
                 </div>
                 <div class="form__group">
@@ -45,11 +47,17 @@
                     placeholder="Your question or suggestion"
                     required
                     class="form__input"
+                    tabindex="3"
                   ></textarea>
                 </div>
               </div>
               <div>
-                <button type="submit" class="form__submit">Submit</button>
+                <input
+                  type="submit"
+                  class="form__submit"
+                  tabindex="4"
+                  value="Submit"
+                />
               </div>
             </div>
           </form>

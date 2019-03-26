@@ -6,7 +6,7 @@
     width: inherit;
   }
 
-  &.is-sended {
+  &.status {
     .form__inner-wrapper {
       filter: blur(2px);
     }
@@ -87,7 +87,6 @@
     background: transparent url('/img/icons/Button.svg') 0 0 no-repeat;
     border: 0;
     border-radius: 50%;
-    outline: none;
     transition: transform 0.35s ease-in;
 
     @media (--md-and-more) {
@@ -123,6 +122,49 @@
 
     &.is-active {
       display: block;
+    }
+  }
+
+  @keyframes dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+
+    > div {
+      width: 64px;
+      height: 64px;
+
+      & {
+        display: block;
+        width: 46px;
+        height: 46px;
+        margin: 1px;
+        content: ' ';
+        border: 5px solid #fff;
+        border-color: #fff transparent #fff transparent;
+        border-radius: 50%;
+        animation: dual-ring 1.2s linear infinite;
+      }
     }
   }
 }
