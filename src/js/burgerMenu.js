@@ -18,13 +18,23 @@ const burgerMenu = () => {
           const $target = document.getElementById(target);
           const $links = Array.prototype.slice.call($target.getElementsByTagName('a'), 0);
 
+          function removeSubstrates() {
+            const $substrates = Array.prototype.slice.call(
+              document.querySelectorAll('.substrate'),
+              0,
+            );
+            $substrates.forEach((substrateEl) => {
+              substrateEl.parentElement.removeChild(substrateEl);
+            });
+          }
+
           function closeNav() {
             el.classList.remove('is-active');
             $target.classList.add('is-closed');
             $target.classList.remove('is-active');
             setTimeout(() => $target.classList.remove('is-closed'), 350);
-            document.body.removeChild($substrate);
             document.body.classList.remove('nav-open');
+            removeSubstrates();
           }
 
           // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
@@ -34,7 +44,7 @@ const burgerMenu = () => {
             el.classList.add('is-active');
             $target.classList.remove('is-closed');
             $target.classList.add('is-active');
-            document.body.appendChild($substrate);
+            document.querySelector('.nav').appendChild($substrate);
             document.body.classList.add('nav-open');
           }
 
